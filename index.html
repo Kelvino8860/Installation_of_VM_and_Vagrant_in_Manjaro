@@ -1,1 +1,106 @@
 <!DOCTYPE html>
+<html lang="en">
+   <head>
+       <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, intial-scale=1.0" />
+       <title>HOW TO INSTALL VM IN MANJARO</title>
+
+       <link rel="stylesheet" href="styles.css">
+   </head>
+
+   <body>
+     <!--Place all visible content in the container-->
+
+     <div class="contentPage">
+
+       <header>
+          <h1>INSTALLING VIRTUAL BOX, VAGRANT AND UBUNTU/FOCAL64 IN MANJARO</h1>
+          <p class="briefIntro">Manjaro is one of the many Linux distros out there. As a developer or
+              software engineer, you will want to separate your development enviroment from your personal
+              working space in your computer. Thats where a 
+              <a 
+              href="https://en.wikipedia.org/wiki/Virtual_machine" target="_blank">VIRTUAL MACHINE
+              </a>
+            comes in handy. The virtual machine is supported by a 
+            <a href="https://en.wikipedia.org/wiki/VirtualBox" target="_blank">VirtualBox.</a>
+          </p>
+
+       </header>
+
+       <hr class="lineBreak">
+       <!--Main content-->
+        <main>
+            
+            <h2 class="installVirtual">Install VirtualBox</h2> 
+             <p class="installVirtualBox">
+                To install VirtualBox, you need to install the packages <mark>virtualbox</mark> and 
+                <mark>linux*-virtualbox-host-modules</mark>.
+                 The latter must match the version of the kernel you are running.
+                 To list what kernels is installed use <mark>mhwd</mark> command.
+             </p>
+             <img src="images/kernelVersion.png" alt="">
+             <p>Now enter the following command to intall a virtualbox and kernel modules
+                for your installed kernel.
+             </p>
+             <img src="images/installComand.png" alt="">
+             <p>Once the installation is complete, you should reboot your computer to
+                add the VirtualBox Module to your kernel.
+             </p>
+
+             <hr>
+             <h2>Install Vagrant</h2>
+             <p>
+                Vagrant is an open-source software product for building and maintaining portable virtual 
+                software development environments; e.g., for VirtualBox, KVM, Hyper-V, Docker containers,
+                 VMware, Parallels, and AWS.
+                 Install the package manager for Linux(Manjaro) using the following command.
+             </p>
+             <img src="images/installVagrant.png" alt="">
+             <p>I input "n" since I have already installed vagrant but for your case select 
+                Y when you are promted to proceed with installation. You can confirm if the installation
+                is successful by running the vagrant command and a drop down of all commands used with vagrant
+                 will be displayed. Escape using "q".
+            </p>
+            <img src="images/confirmVagrant.png" alt="">
+
+            <hr>
+            <h2>Adding Ubuntu/focal64 in Vagrant</h2>
+            <p>First run <mark>vagrant box list</mark> command to check if you have any boxes in your vagrant.
+             For my case i have already installed the ubuntu/focal64 box but for you it should not list anything.
+            </p>
+            <img src="images/checkBoxAvailable.png" alt="">
+            <p>proceed to add the Ubuntu box using <mark>vagrant box add ubuntu/focal64</mark> command.
+               After installation is complete you can use the <mark>vagrant box list</mark> to confirm 
+               the installation was succesful.
+            </p>
+            <img src="images/addBox.png" alt="">
+
+            <hr>
+            <h2>Conclusion</h2>
+            <p>You use the <mark>vagrant up</mark> command to start up vagrant and <mark>vagrant status</mark>
+                to check the status(Wether its on or off). To turn it off you use <mark>vagrant halt</mark>
+                . To log in to your ubuntu box use <mark>vagrant ssh</mark> and to exit from your ubuntu box enter
+                 the <mark>exit</mark> command.
+             </p>
+        </main>   
+                  
+        <hr class="bottom-line">
+      <footer>
+        <p>
+          <a href="https://kelvino8860.github.io/forms-html-css/" target="_blank">
+            CHECK OUT MY JOB APPLICATION FORM
+          </a>
+        </p>
+        <p>
+            <a href="https://github.com/Kelvino8860" target="_blank">Git hub account</a>
+        </p>
+        <p class="address">
+         Parklands-Kolobot Road
+         Author: Kelvino8860
+        </p>
+      </footer>
+
+     </div>
+
+   </body>
+</html>
